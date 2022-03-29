@@ -12,13 +12,17 @@ def bild_titles(search_term):
     articles = doc.find_all(class_='headline')
 
     for article in articles:
-        title = article.text
-        datum = article.parent.parent.find("time")['datetime'].split("-")
-        year = int(datum[0])
-        month = int(datum[1])
-        day = int(datum[2].split("T")[0])
-        converted_date = date(year, month, day)
-        article_list[title] = converted_date
+        try:
+            title = article.text
+            datum = article.parent.parent.find("time")['datetime'].split("-")
+            year = int(datum[0])
+            month = int(datum[1])
+            day = int(datum[2].split("T")[0])
+            converted_date = date(year, month, day)
+            article_list[title] = converted_date
+            print(title)
+        except:
+            pass
 
     return article_list
 

@@ -25,4 +25,5 @@ def title_hanta(article_list):
     fdist = nltk.FreqDist(nouns)
 
     pprint(fdist.most_common(10))
+    return(nouns)
     # fdist.plot(75, cumulative=False)
