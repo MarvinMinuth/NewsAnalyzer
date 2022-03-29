@@ -6,6 +6,7 @@ from pprint import pprint
 
 
 def title_hanta(article_list):
+    # nltk.download('punkt')
     text = ''
     for title in article_list:
         text = text + title + ' '
@@ -24,5 +25,4 @@ def title_hanta(article_list):
     fdist = nltk.FreqDist(nouns)
 
     pprint(fdist.most_common(10))
-    fdist.plot(75, cumulative=False)
-
+    # fdist.plot(75, cumulative=False)
